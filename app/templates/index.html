@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}{{data.titulo}}{% endblock %}
+
+{% block body %}
+
+
+
+
+<div class="contenedor_mensaje">
+<h1 class="mensaje">Organizaciones Recomendadas</h1>
+<h2 class="mensaje2">Descubre organizaciones de diferentes categorías</h2>
+</div>
+
+<div class="cards-container">
+
+{% for centro in centros %}
+
+<div class="card">
+
+<!-- Categorias de la dependencia -->
+<span class="tag">{{ centro[7] }}</span>
+
+<!-- Nombre de la dependencia -->
+<h2>{{ centro[1] }}</h2>
+
+<!-- Descripcion de la dependencia -->
+<h3>{{ centro[2] }}</h3>
+
+<!-- Direccion de la dependencia -->
+<p>{{ centro[3] }}</p>
+
+<!-- Telefono de la dependencia -->
+<p>{{ centro[4] }}</p>
+
+<!-- Correo de la dependencia -->
+<p>{{ centro[5] }}</p>
+
+<!-- Pagina de la dependencia -->
+ 
+<a href="{{ centro[6] }}">
+    <button class="btn-contacto">Contactar ahora</button>
+</a>
+
+<button onclick="verUbicacion('{{ centro[3] }}')" class="btn-contacto">
+    Ver ubicación
+</button>
+
+<a href="https://www.google.com/maps/search/?api=1&query={{ centro[3] }}" target="_blank">
+    <button class="btn-contacto">Ir</button>
+</a>
+
+<!-- <span class="prioridad">Alta prioridad</span> -->
+
+</div>
+
+{% endfor %}
+
+<!--<div id="mapa-container" style="display:none; margin:20px;">
+    <div id="map" style="width:300%; height:600px;"></div>
+    <button onclick="cerrarMapa()">❌ Cerrar mapa</button>
+</div>-->
+
+<div id="mapa-overlay" class="mapa-overlay" onclick="cerrarMapa(event)"">
+    
+    <div class="mapa-contenido">
+        <span class="cerrar" onclick="cerrarMapa()">✖</span>
+        <div id="map"></div>
+    </div>
+
+</div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Despensas Bienestar {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/base.css')}}">
+</head>
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVQ__HLlqTHUIeoLFOhPrpQdkaaQeSGM4&callback=initMap"></script>
+<body>
+
+    <header class="header">
+
+        <h1>Despensas Bienestar</h1>
+
+        <div class="categorias">
+            
+            {% if data %}
+            {% for categoria in data.botones %}
+            <!-- Se construye un querystring  para crear el url 
+             haciendo uso de index que es igual a la ruta raiz y se le agrega la categoria como otro parametro
+             quedando asi por ejemplo /?categoria=Todas-->
+            <a href="{{ url_for('index', categoria=categoria) }}">
+                <button>{{ categoria }}</button>
+            </a>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+    </header>
+
+    <main>
+        {% block body %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p class="footer-title">Centro de Donaciones © 2026</p>
+        <p class="footer-sub">Conectando corazones generosos con causas importantes</p>
+    </footer>
+</body>
+<script src="{{ url_for('static', filename='js/base.js')}}"></script>
+
+</html>
