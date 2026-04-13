@@ -11,8 +11,9 @@ body{
 }
 
 .header h1{
-    font-size:40px;
+    font-size:55px;
     margin-bottom:25px;
+    margin-top: -5px;
 }
 
 .categorias{
@@ -137,6 +138,11 @@ main{
      font-size:15px;
 }
 
+.card-info{
+    max-width: 700px;
+    margin: 60px auto;
+    text-align: center;
+}
 
 /* etiquetas de categoria */
 .tag{
@@ -317,4 +323,89 @@ main{
     border-radius: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     font-weight: 600;
+}
+
+/* Encuesta */
+.nav-extra{
+    padding: 20px;
+    background:#2480f8;
+
+    display: flex;
+    /* centrar contenido */
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-extra{
+    background:#eb1a35;
+    color:white;
+    border:none;
+    padding:10px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:30px;
+    transition: all 0.2s ease;
+
+}
+
+.btn-extra:hover{
+    background:#c8142b;
+    transform: translateY(-2px);
+}
+
+
+.barra-slider{
+    position: relative;
+    display: flex;
+    width: 400px;
+    margin: 30px auto;
+    background: #e5e7eb;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+/* opciones */
+.opcion{
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 600;
+    color: #374151; /* gris */
+        transition: color 0.2s ease, transform 0.2s ease;
+
+}
+
+.opcion.activo{
+     color: white;
+    transform: scale(1.05);
+}
+
+/* slider */
+.slider{
+    transform: translateX(100%);
+    position: absolute;
+    width: 33.33%;
+    height: 100%;
+    background: #3b82f6;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+/* div encuestas*/
+
+.contenido-encuesta{
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-iframe{
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 12px;
 }

@@ -62,3 +62,34 @@ function cerrarMapa(event) {
         overlay.style.display = "none";
     }
 }
+
+
+// Slider
+
+window.onload = function(){
+    cambiar(1);
+}
+
+
+function cambiar(index){
+
+    const slider = document.getElementById("slider");
+
+    // mover slider
+    slider.style.transform = "translateX(" + (index * 100) + "%)";
+
+    // ocultar contenido
+    document.getElementById("contenido0").style.display = "none";
+    document.getElementById("contenido1").style.display = "none";
+    document.getElementById("contenido2").style.display = "none";
+
+    // mostrar seleccionado
+    document.getElementById("contenido" + index).style.display = "block";
+
+    // quitar activo a todos
+    const opciones = document.querySelectorAll(".opcion");
+    opciones.forEach(op => op.classList.remove("activo"));
+
+    // agregar activo al seleccionado
+    opciones[index].classList.add("activo");
+}

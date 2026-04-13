@@ -133,6 +133,10 @@ def about():
 @app.route("/contacto")
 def contacto():
     return "Contactanos"
+
+@app.route("/encuesta")
+def encuesta():
+    return render_template("encuesta.html")
     
 if __name__ == "__main__":
     app.register_error_handler(404, pagina_no_encontrada)

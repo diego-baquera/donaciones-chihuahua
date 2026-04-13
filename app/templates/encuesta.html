@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+
+{% block extra%}
+    <a href="{{ url_for('index') }}">
+        <button class="btn-extra">Volver al menú principal</button>
+    </a>
+{% endblock %}
+
+{% block body %}
+<div class="barra-slider">
+    <div class="slider" id="slider"></div>
+
+    <div class="opcion" onclick="cambiar(0)">Cuestionario Satisfacción</div>
+    <div class="opcion" onclick="cambiar(1)">Nos importa tu opinión</div>
+    <div class="opcion" onclick="cambiar(2)">Encuesta sobre donaciones</div>
+    
+</div>
+
+<div class="contenido-encuesta">
+
+    <div id="contenido0" style="display:none;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUYMwxiTiki6OELx7Ou_ea8WBcJfUO31pIforGjaQgB0jtPw/viewform?usp=publish-editor"
+        class="form-iframe">
+        Cargando…
+        </iframe>
+    </div>
+
+    <!-- 👇 aquí se aplica la card correctamente -->
+    <div id="contenido1" class="card card-info">
+
+        <h2>¿Por qué es importante tu opinión?</h2>
+
+        <p>
+        Tu participación en esta encuesta es fundamental para mejorar esta plataforma. El objetivo de esta herramienta es facilitar que las personas encuentren lugares donde puedan realizar donaciones de manera rápida y confiable.
+        <br><br>
+        Tus respuestas nos ayudarán a identificar qué aspectos funcionan bien y cuáles pueden mejorar, especialmente en temas como la facilidad de uso, la claridad de la información y la utilidad del sistema de filtrado.
+        <br><br>
+        La información recopilada será utilizada únicamente con fines académicos y de mejora del sistema, por lo que tus respuestas serán tratadas de forma confidencial.
+        <br><br>
+        Tu opinión contribuye directamente a hacer esta herramienta más útil para futuras personas que deseen ayudar a otros.
+        </p>
+
+    </div>
+
+    <div id="contenido2" style="display:none;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZeElbmfGn7MiNd-D9zsR1yA24IkMgYiawT05wWdU5s5VJTQ/viewform?usp=publish-editor"
+        class="form-iframe">
+        Cargando…
+        </iframe>
+    </div>
+
+</div>
+{% endblock %}

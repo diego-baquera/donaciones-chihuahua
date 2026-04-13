@@ -4,9 +4,6 @@
 
 {% block body %}
 
-
-
-
 <div class="contenedor_mensaje">
 <h1 class="mensaje">Organizaciones Recomendadas</h1>
 <h2 class="mensaje2">Descubre organizaciones de diferentes categorías</h2>
@@ -73,3 +70,10 @@
 
 </div>
 {% endblock %}
+
+{% block extra%}
+    <a href="{{ url_for('encuesta') }}">
+        <button class="btn-extra">Responder encuesta</button>
+    </a>
+{% endblock %}
+
